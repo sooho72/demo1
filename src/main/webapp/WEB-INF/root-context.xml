@@ -30,8 +30,9 @@
         <constructor-arg ref="hikariConfig"/>
     </bean>
 
-    <bean id="sqlSessionFactor" class="org.mybatis.spring.SqlSessionFactoryBean">
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
+        <property name="mapperLocations" value="classpath:/mappers/**/*.xml"/>
     </bean>
 
     <mybatis:scan base-package="com.pgm.springdemo.mapper"/>
